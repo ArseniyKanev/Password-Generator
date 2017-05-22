@@ -1,4 +1,4 @@
-var app = angular.module('passwordGenerator', ['ui.router', 'templates']);
+var app = angular.module('passwordGenerator', ['ui.router', 'templates', 'ngResource']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
   function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -6,7 +6,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     .state('home', {
       url: '/',
       templateUrl: 'angular/views/home.html',
-      controller: 'PasswordssCtrl'
+      controller: 'PasswordsCtrl'
     });
 
     $urlRouterProvider.otherwise('home');

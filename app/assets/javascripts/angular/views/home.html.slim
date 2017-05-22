@@ -1,0 +1,18 @@
+form name="myform"
+  .form-group ng-repeat="word in password.words track by $index"
+    input type="text" name="myfield" ng-model="password.words[$index]" ng-required="true" disallow-spaces=""
+    a href="javascript:void(0);" ng-click="remove($index)" ng-if="$index > 2"
+      | X
+  button ng-click="myform.$valid && generate()"
+    | Cгенерироать
+
+button ng-click="addWord()"
+  | Добавить слово
+
+p ng-if="possiblePasswords"
+  | Возможные пароли
+p
+  span ng-repeat="password in possiblePasswords track by $index"
+    | {{ password }}
+    br
+
